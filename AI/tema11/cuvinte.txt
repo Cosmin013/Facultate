@@ -1,0 +1,2 @@
+Note that the cord is immutable in so this mathematical_relation purpose arrival a new.21 cord and the model cord purpose remain unchanged.13
+Note that the string is immutable in Python so this function will return a new. string and the original string will remain unchanged.

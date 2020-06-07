@@ -1,0 +1,59 @@
+
+'''
+
+def str_dfs(s):
+    visited = [s]
+    stack = [s]
+    b = s.get_b()
+    while stack:
+        s = stack[len(stack) - 1]
+        v = list(itertools.product(range(b + 1), repeat=2))
+        while v:
+            n = np.random.randint(0, len(v))
+            mm = (-1) ** (s.get_bp()) * v[n][0]
+            cm = (-1) ** (s.get_bp()) * v[n][1]
+            if s.validation(mm,  cm) and not visited.count(s.transition(mm, cm)):
+                s = s.transition(mm, cm)
+                visited.append(s)
+                stack.append(s)
+                if s.is_final():
+                    return stack
+                v = list(itertools.product(range(b + 1), repeat=2))
+            v.pop(n)
+
+        stack.pop()
+    print(stack)
+'''
+'''
+def str_idfs(s):
+    b = s.get_b()
+    limit = 2
+    while limit < 10000:
+        stack = [s]
+        visited = [s]
+        while stack:
+            s = stack[len(stack) - 1]
+            v = list(itertools.product(range(b + 1), repeat=2))
+            while v:
+                n = np.random.randint(0, len(v))
+                mm = ((-1) ** s.get_bp()) * v[n][0]
+                cm = ((-1) ** s.get_bp()) * v[n][1]
+
+                if len(stack) == limit - 1:
+                    s.transition(mm, cm).is_final();
+
+                if s.validation(mm,  cm) and visited.count(s.transition(mm, cm)) == 0 and len(stack) < limit-1:
+                    s = s.transition(mm, cm)
+                    visited.append(s)
+                    stack.append(s)
+                    if s.is_final():
+                        return stack
+                    v = list(itertools.product(range(b + 1), repeat=2))
+                else:
+                    v.pop(n)
+
+            print("POP", stack.pop())
+
+        limit += 1
+    return 0
+'''

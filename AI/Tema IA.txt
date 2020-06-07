@@ -1,0 +1,6 @@
+-> optimizari random pt tema
+ 1 De retinut starile vizitate
+ 2 Dupa un numar mare de stari, a se reseta la starea finala(si starile vizitate)
+De implementat prin:
+BKTR
+DFS
